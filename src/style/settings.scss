@@ -1,0 +1,15 @@
+$font-1: 'Montserrat', sans-serif;
+
+$primary: #FF6060;
+
+body {
+  padding-left: 100px;
+  padding-right: 100px;
+  font-family: $font-1;
+  color: $primary;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

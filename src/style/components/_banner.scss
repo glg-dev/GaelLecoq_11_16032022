@@ -1,0 +1,25 @@
+.banner {
+  position: relative;
+  height: 223px;
+  background: url(../../assets/banner_img.jpg) no-repeat center/cover;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & h1 {
+    font-size: 2.6rem;
+    font-weight: 500;
+    color: #FFF;
+    z-index: 2;
+  }
+  & .darken-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color: #000000, $alpha: .25);
+    border-radius: 25px;
+    z-index: 1;
+  }
+}

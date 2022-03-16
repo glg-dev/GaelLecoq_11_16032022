@@ -1,0 +1,9 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+  background: #F6F6F6;
+  border-radius: 25px;
+  margin-top: 43px;
+  padding: 56px 50px;
+}

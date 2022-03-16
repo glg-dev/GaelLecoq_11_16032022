@@ -2,11 +2,22 @@ $font-1: 'Montserrat', sans-serif;
 
 $primary: #FF6060;
 
+* {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
 body {
-  padding-left: 100px;
-  padding-right: 100px;
+  margin: 0;
+  padding: 0;
   font-family: $font-1;
+  font-size: 18px;
   color: $primary;
+}
+
+.header, .home, .error {
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 a {

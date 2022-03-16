@@ -1,4 +1,5 @@
 .banner {
+  overflow: hidden;
   position: relative;
   height: 223px;
   background: url(../../assets/banner_img.jpg) no-repeat center/cover;
@@ -7,7 +8,7 @@
   justify-content: center;
   align-items: center;
   & h1 {
-    font-size: 2.6rem;
+    font-size: 2.6em;
     font-weight: 500;
     color: #FFF;
     z-index: 2;

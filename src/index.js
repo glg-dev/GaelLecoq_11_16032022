@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer';
 import Header from './components/Header';
 import About from './pages/About';
+import Error from './pages/Error';
 import Home from './pages/Home';
 import reportWebVitals from './reportWebVitals';
 import './style/styles.scss'
@@ -14,7 +16,9 @@ ReactDOM.render(
       <Routes>
         <Route exact path ='/' element={<Home />} />
         <Route path='/about' element={<About />} />
+        <Route path='*' element={<Error />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

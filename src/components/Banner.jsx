@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Banner = () => {
+const Banner = ({ text, picture }) => {
   return (
     <div className='banner'>
-      <h1>Chez vous, partout et ailleurs</h1>
+      <h1>{text}</h1>
+      <img src={picture} alt="banner" />
       <div className="darken-filter"></div>
     </div>
   );

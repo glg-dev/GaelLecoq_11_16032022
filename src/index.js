@@ -6,6 +6,7 @@ import Header from './components/Header';
 import About from './pages/About';
 import Error from './pages/Error';
 import Home from './pages/Home';
+import House from './pages/House';
 import reportWebVitals from './reportWebVitals';
 import './style/styles.scss'
 
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Route exact path ='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='*' element={<Error />} />
+        <Route path='/house/:id' element={<House />} />
       </Routes>
       <Footer />
     </BrowserRouter>

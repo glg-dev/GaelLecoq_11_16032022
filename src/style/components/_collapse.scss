@@ -1,0 +1,49 @@
+.collapse {
+  font-size: 1.5rem;
+  width: 80%;
+  border-radius: 5px;
+  overflow: hidden;
+  .arrow {
+    transform: rotate(0deg);
+    transition: .3s;
+  }
+  .arrow-expanded {
+    transform: rotate(180deg);
+  }
+  .collapse-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    color: #FFF;
+    background: $primary;
+    border-radius: 5px;
+    z-index: 10;
+  }
+  .content {
+    transition: .3s;
+    transform: translateY(0);
+  }
+  .collapse-expanded {
+    background: #F6F6F6;
+    padding: 16px;
+    transform: translateY(0);
+
+    p {
+      margin: 0;
+    }
+  }
+  .collapse-hidden {
+    display: none;
+    transform: translateY(-100%);
+  }
+  @media screen and (max-width: 742px) {
+    width: 100%;
+    .collapse-header {
+      font-size: 13px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+}

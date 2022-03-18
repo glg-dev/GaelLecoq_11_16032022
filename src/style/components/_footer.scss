@@ -10,6 +10,10 @@
   align-items: center;
   color: #FFF;
   font-size: 1.6em;
+  font-weight: 500;
   padding-top: 66px;
   padding-bottom: 29px;
+  @media screen and (max-width: 532px) {
+    font-size: .7em;
+  }
 }

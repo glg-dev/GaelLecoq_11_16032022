@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import Banner from '../components/Banner';
 import Cards from '../components/Cards';
+import bannerImg from '../assets/banner_img.jpg'
 
 
 
 const Home = () => {
-  const [housesList, setHousesList] = useState([])
+  const [data, setData] = useState([])
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    async function fetchHouses() {
+    async function fetchData() {
       try {
         const res = await fetch('./data/logements.json')
-        // const { housesList } = await res.json()
-        const housesList = await res.json()
-        setHousesList(housesList)
-        console.log(housesList);
+        // const { data } = await res.json()
+        const data = await res.json()
+        setData(data)
       } catch (error) {
         console.error(error);
         setError(true)
       }
     }
-    fetchHouses()
+    fetchData()
   }, [])
 
   if (error) {
@@ -30,17 +31,19 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <Banner />
-      {!housesList ? (
+      <Banner text='Chez vous, partout et ailleurs' picture={bannerImg} />
+      {!data ? (
         <h1>Chargement des données...</h1>
       ) : (
         <div className='cards-container'>
-          {housesList.map((house, id) => (
-            <Cards 
-            key={`${house.title}-${id}`}
-            cover={house.cover}
-            title={house.title}
-            />
+          {data.map((house, id) => (
+            <NavLink to={'/house/' + house.id} key={`${house.title}-${id}`}>
+              <Cards 
+              
+              cover={house.cover}
+              title={house.title}
+              />
+            </NavLink>
           ))}
         </div>
       )}

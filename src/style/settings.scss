@@ -15,9 +15,13 @@ body {
   color: $primary;
 }
 
-.header, .home, .error {
+.header, .home, .about, .house, .error {
   margin-left: 100px;
   margin-right: 100px;
+  @media screen and (max-width: 742px) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
 }
 
 a {

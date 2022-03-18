@@ -1,0 +1,28 @@
+.house {
+  .content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+  }
+  h2 {
+    font-size: 2em;
+    font-weight: 500;
+    margin: 0;
+  }
+  h3 {
+    font-size: 1em;
+    font-weight: 500;
+    margin: 0;
+  }
+  .owner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+  }
+  img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+  }
+}

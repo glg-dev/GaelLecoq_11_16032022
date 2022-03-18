@@ -2,16 +2,34 @@
   overflow: hidden;
   position: relative;
   height: 223px;
-  background: url(../../assets/banner_img.jpg) no-repeat center/cover;
   border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   & h1 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
     font-size: 2.6em;
     font-weight: 500;
     color: #FFF;
     z-index: 2;
+    @media screen and (max-width: 900px) {
+      font-size: 1.3em;
+    }
+    @media screen and (max-width: 532px) {
+      font-size: 1.3em;
+      justify-content: flex-start;
+      margin-left: 16px;
+      width: 75%;
+    }
+  }
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
   }
   & .darken-filter {
     position: absolute;

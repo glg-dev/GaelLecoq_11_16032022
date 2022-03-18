@@ -26,4 +26,7 @@
     color: #FFFFFF;
     z-index: 1;
   }
+  @media screen and (max-width: 1030px) {
+    width: 100%;
+  }
 }

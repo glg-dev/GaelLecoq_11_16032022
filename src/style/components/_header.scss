@@ -7,12 +7,23 @@
   & img {
     height: 63px;
   }
-  & .links {
+  .links {
     display: flex;
     gap: 57px;
     font-size: 1.3em;
     & .navActive {
       text-decoration: underline;
+    }
+  }
+  @media screen and (max-width: 532px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    img {
+      height: 43px;
+    }
+    .links {
+      gap: 10px;
+      font-size: .7em;
     }
   }
 }

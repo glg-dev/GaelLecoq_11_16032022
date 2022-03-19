@@ -8,10 +8,11 @@ import Tags from '../components/Tags';
 const House = () => {
   const { id } = useParams()
   const [houseDetails, setHouseDetails] = useState([])
-  const [isLoading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [hostData, setHostData] = useState(null)
 
   // const fetchIdData = () => {
+  //   setLoading(true)
   //   fetch('../data/logements.json', {
   //     headers: {
   //       'Content-Type': 'application/json',
@@ -24,44 +25,42 @@ const House = () => {
   //     })
   //     .then((dataList) => {
   //       const houseDetails = dataList.find(object => object.id === id)
-  //       console.log(houseDetails);
   //       setHouseDetails(houseDetails)
+  //       setHostData(houseDetails.host)
   //     })
+  //     setLoading(false)
   // }
 
   // useEffect(() => {
   //   fetchIdData()
-  // }, [])
+  // }, [id])
 
   useEffect(() => {
     async function fetchIdData() {
-      setLoading(true)
       try {
         const response = await fetch('../data/logements.json')
         const dataList = await response.json()
         const houseDetails = dataList.find(object => object.id === id)
         setHouseDetails(houseDetails)
-        console.log(houseDetails)
+        setHostData(houseDetails.host)
       } catch (error) {
         console.error(error);
         setError(error)
       } finally {
-        setLoading(false)
       }
     } fetchIdData()
-  }, [])
+  }, [id])
 
   if (error) {
     return <span>Oups, il y a eu un problème.</span>
   }
 
   const { title, pictures, description, host, rating, location, equipments, tags} = houseDetails
-  // console.log(pictures.length);
 
 
   return (
     <div className='house'>
-      {isLoading ? (
+      {!hostData ? (
         <h1>Chargement des données...</h1>
       ) : (
         <div className="body">
@@ -70,12 +69,12 @@ const House = () => {
             <div className="title">
               <h2>{title}</h2>
               <h3>{location}</h3>
-              {/* <Tags tags={tags} /> */}
+              <Tags tags={tags} />
             </div>
             <div className="infos">
               <div className="owner">
-                {/* <span>{host.name}</span> */}
-                {/* <img src={host.picture} /> */}
+                <span className='host-name'>{host.name}</span>
+                <img src={host.picture} alt={host.name} />
               </div>
               <Rating rating={rating} />
             </div>

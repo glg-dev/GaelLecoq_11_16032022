@@ -3,7 +3,8 @@ import chevronDown from '../assets/chevron_down.svg'
 
 const Collapse = ({ title, content }) => {
   const [isExpanded, setIsExpanded] = useState(false)
-  // console.log(content);
+  let newContent
+  (typeof content === 'string') ? newContent = [content] : newContent = content
 
   return (
     <div className='collapse'>
@@ -12,7 +13,11 @@ const Collapse = ({ title, content }) => {
         <img src={chevronDown} className={isExpanded ? 'arrow arrow-expanded' : 'arrow'} />
       </div>
       <div className={isExpanded ? 'content collapse-expanded' : 'content collapse-hidden'}>
-        <p>{content}</p>
+        {
+          newContent.map(item => (
+            <span key={item}>{item}</span>
+          ))
+        }
       </div>
     </div>
   );

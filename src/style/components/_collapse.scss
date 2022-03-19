@@ -22,14 +22,15 @@
   .content {
     transition: .3s;
     transform: translateY(0);
-  }
-  .collapse-expanded {
-    background: #F6F6F6;
-    padding: 16px;
-    transform: translateY(0);
-
-    p {
-      margin: 0;
+    &.collapse-expanded {
+      background: #F6F6F6;
+      padding: 16px;
+      transform: translateY(0);
+      flex-direction: column;
+      line-height: 25px;
+      p {
+        margin: 0;
+      }
     }
   }
   .collapse-hidden {
@@ -40,6 +41,9 @@
     width: 100%;
     .collapse-header {
       font-size: 13px;
+    }
+    .content.collapse-expanded {
+      line-height: 17px;
     }
     p {
       font-size: 12px;

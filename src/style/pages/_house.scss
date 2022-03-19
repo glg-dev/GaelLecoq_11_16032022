@@ -21,6 +21,9 @@
     justify-content: flex-end;
     align-items: center;
     gap: 10px;
+    .host-name {
+      width: 80px;
+    }
     img {
       width: 64px;
       height: 64px;

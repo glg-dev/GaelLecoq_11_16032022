@@ -1,8 +1,10 @@
 .house {
+  margin-bottom: 20px;
   .content {
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
+    padding-bottom: 26px;
   }
   h2 {
     font-size: 2em;
@@ -19,10 +21,22 @@
     justify-content: flex-end;
     align-items: center;
     gap: 10px;
+    img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+    }
   }
-  img {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
+  .house-description {
+    display: flex;
+    justify-content: space-between;
+    gap: 96px;
+    font-size: 1em;
   }
+  @media screen and (max-width: 742px) {
+    .content, .house-description {
+     flex-direction: column;
+    }
+  }
+
 }

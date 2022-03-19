@@ -3,6 +3,7 @@ import chevronDown from '../assets/chevron_down.svg'
 
 const Collapse = ({ title, content }) => {
   const [isExpanded, setIsExpanded] = useState(false)
+  // console.log(content);
 
   return (
     <div className='collapse'>

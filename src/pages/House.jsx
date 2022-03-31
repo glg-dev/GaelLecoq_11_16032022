@@ -35,8 +35,7 @@ const House = () => {
   //   fetchIdData()
   // }, [id])
 
-  useEffect(() => {
-    async function fetchIdData() {
+  useEffect(async () => {
       try {
         const response = await fetch('../data/logements.json')
         const dataList = await response.json()
@@ -46,9 +45,7 @@ const House = () => {
       } catch (error) {
         console.error(error);
         setError(error)
-      } finally {
       }
-    } fetchIdData()
   }, [id])
 
   if (error) {
